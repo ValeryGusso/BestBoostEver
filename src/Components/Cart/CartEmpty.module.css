@@ -1,0 +1,35 @@
+.cart {
+	display: grid;
+	grid-template-rows: 5vmin 1fr 5vmin;
+	align-items: center;
+	justify-items: center;
+}
+
+.cart img {
+  width: 30vmax;
+}
+
+.cart h2 {
+  font-size: 6vmin;
+}
+
+.cart button {
+	width: 15vmin;
+	height: 5vmin;
+	border: none;
+	border-radius: 2vmin;
+	font-size: 2vmin;
+}
+
+.back {
+	position: relative;
+	padding-left: 4vmin;
+}
+
+.back img {
+	position: absolute;
+	top: 0.5vmin;
+	left: 2vmin;
+	width: 4vmin;
+	height: 4vmin;
+}

@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	color: black;
+	list-style: none;
+}
+
+body {
+	background: url('https://images.noob-club.ru/news/2020/04/auk48ajmlj.jpg') fixed;
+	background-size: cover;
+	overflow-y: scroll;
+}
+
+.wrapper {
+	width: 90%;
+	height: 90%;
+	margin: 1% auto;
+	display: flex;
+	flex-direction: column;
+}

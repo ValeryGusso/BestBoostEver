@@ -1,0 +1,40 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55)
+}
+
+.content {
+  width: 40vmin;
+  height: 40vmin;
+  display: grid;
+  grid-template-rows: 1fr 10vmin;
+  align-items: center;
+  justify-items:  center;
+  text-align: center;
+  font-size: 5vmin;
+  color: aqua;
+}
+
+.btns {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items:  center;
+}
+
+.btns button{
+  width: 15vmin;
+  height: 5vmin;
+  border-radius: 1vmax;
+  border: none;
+  cursor: pointer;
+}

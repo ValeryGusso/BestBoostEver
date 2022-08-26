@@ -1,0 +1,43 @@
+.categories {
+	width: 100%;
+	height: 8vmin;
+}
+
+.categories ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	margin-bottom: 10px;
+	column-gap: 1vmax;
+}
+
+.categories ul li {
+	width: 10vmax;
+	height: 5vmin;
+	display: flex;
+	margin-bottom: 0.5vmin;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.5vmin;
+	background: grey;
+	border-radius: 2vmin;
+	transition: 0.5s;
+  cursor: pointer;
+}
+
+.active {
+	transform: scale(1.1) translateY(1vmin);
+	color: antiquewhite!important;
+	background: black!important;
+}
+
+.categories ul li:hover {
+	transform: scale(1.05);
+filter: drop-shadow(1vmin 1vmin 1vmin rgba(0, 0, 0, 0.5));
+}
+
+.active:hover {
+	transform: scale(1.1) translateY(1vmin)!important;
+	filter: none!important
+	}

@@ -1,0 +1,55 @@
+.product {
+  width: 25vmax;
+  height: 25vmax;
+  margin-bottom: 2vmax;
+  margin-right: 2vmax;
+  /* background: rgba(255, 0, 0, 0.1); */
+  display: grid;
+  grid-template-rows: 17vmax 0.8fr 0.5fr;
+  /* align-items: center; */
+}
+
+.product img {
+  width: 17vmax;
+  margin: -1vmax 4vmax;
+  /* height: 50%; */
+}
+
+.title {
+  text-align: center;
+  font-size: 3vmin;
+  /* margin-top: 1vmax; */
+}
+
+.bottom {
+display: flex;
+flex-direction: row;
+text-align: center;
+justify-content: center;
+align-items:center;
+column-gap: 2vmax;
+font-size: 3vmin;
+}
+
+.price {
+  color: whitesmoke
+}
+.bottom button {
+  width: 8vmax;
+  height: 5vmin;
+  background: olivedrab;
+  border-radius: 1vmin;
+  border: none;
+  font-size: 3vmin;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bottom button:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(1vmin 1vmin 1vmin black);
+}
+
+.bottom button:active {
+  transform: scale(1);
+}
