@@ -1,0 +1,104 @@
+.wrapper {
+  width: 90%;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.wrapper img {
+  width: 15vmax;
+}
+
+.product {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  padding-left: 30%;
+}
+
+.product p {
+  font-size: 7vmin;
+  color: wheat
+}
+
+.options {
+  width: 17vmax;
+}
+
+.discription {
+  width: 100%;
+  height: 80%;
+  padding: 0 2vmax;
+  font-size: 2vmin;
+  border-radius: 5vmax;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.4)
+}
+
+.right {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.bottom {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	column-gap: 2vmax;
+	font-size: 3vmin;
+  margin-bottom: 12vmin;
+}
+
+.price {
+	position: relative;
+	color: whitesmoke;
+	font-size: 6vmin;
+}
+
+.price::before {
+	content: '';
+	position: absolute;
+	top: 5%;
+	left: -10%;
+	width: 120%;
+	height: 80%;
+	background: rgba(0, 0, 0, 0.6);
+  border-radius: 1vmax;
+  z-index: -1;
+}
+
+.bottom button {
+	width: 10vmax;
+	height: 7vmin;
+	background: linear-gradient(45deg, #134e5e, #71b280);
+	color: wheat;
+	border-radius: 1vmin;
+	border: none;
+	font-size: 3.5vmin;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.bottom button:hover {
+	transform: scale(1.05);
+	filter: drop-shadow(1vmin 1vmin 1vmin black);
+}
+
+.bottom button:active {
+	transform: scale(1);
+}

@@ -6,8 +6,8 @@ type Item = {
 	title: string;
 	image: string;
 	price: number;
-	size: number;
-	type: number;
+	options: string;
+	type: string;
 	counter?: number
 }
 
@@ -36,7 +36,7 @@ export const cartSlice = createSlice({
 	reducers: {
 		addItem(state, action: PayloadAction<Item>) {
 			const findItem = state.items.find(
-				obj => obj.id === action.payload.id && obj.size === action.payload.size && obj.type === action.payload.type
+				obj => obj.id === action.payload.id && obj.options === action.payload.options && obj.type === action.payload.type
 			)
 
 			if (findItem && findItem.counter) {
@@ -62,7 +62,7 @@ export const cartSlice = createSlice({
 		},
 		increment(state, action: PayloadAction<Item>) {
 			const findItem = state.items.find(
-				obj => obj.id === action.payload.id && obj.size === action.payload.size && obj.type === action.payload.type
+				obj => obj.id === action.payload.id && obj.options === action.payload.options && obj.type === action.payload.type
 			)
 			if (findItem && findItem.counter) {
 			findItem.counter++
@@ -72,7 +72,7 @@ export const cartSlice = createSlice({
 		},
 		decrement(state, action: PayloadAction<Item>) {
 			const findItem = state.items.find(
-				obj => obj.id === action.payload.id && obj.size === action.payload.size && obj.type === action.payload.type
+				obj => obj.id === action.payload.id && obj.options === action.payload.options && obj.type === action.payload.type
 			)
 			if (findItem && findItem.counter && findItem.counter > 0) {
 				findItem.counter--

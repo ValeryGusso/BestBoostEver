@@ -1,0 +1,31 @@
+.wrapper {
+  position: absolute;
+  top: 25vmin;
+  width: 40vmax;
+  height: 60vmin;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.wrapper img {
+  width: 23vmax;
+}
+
+.wrapper h1 {
+  position: relative;
+  font-size: 8vmin;
+  color: wheat;
+}
+
+.wrapper h1::before {
+	content: '';
+	position: absolute;
+	top: 5%;
+	left: -10%;
+	width: 120%;
+	height: 90%;
+	background: rgba(0, 0, 0, 0.7);
+  border-radius: 1vmax;
+  z-index: -1;
+}

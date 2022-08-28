@@ -9,6 +9,7 @@
  left: 0.75vmax;
  transform: scale(1.5);
  cursor: default!important;
+ /* filter: invert(1); */
 }
 
 .search input {
@@ -19,7 +20,13 @@
   padding-top: 1%;
   border: none;
   border-radius: 2vmax;
-  font-size: 2vmin;
+  font-size: 2.5vmin;
+  background: rgba(255, 255, 255, 0.6);
+  color: black
+}
+
+input::placeholder{
+  color: black
 }
 
 .search svg {
@@ -37,5 +44,8 @@ position: absolute;
 
 .search input:focus {
   outline: none;
+  border: none;
+  color: black;
+  background: white;
   filter: drop-shadow(0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.75));
 }

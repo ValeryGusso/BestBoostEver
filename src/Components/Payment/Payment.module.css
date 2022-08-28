@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+ align-items: center;
+ justify-items: center;
+}
+
+.wrapper h1 {
+  color: wheat;
+  font-size: 10vmin;
+}
+
+.wrapper img { 
+  transform: scale(1.2) translateY(3vmin);
+}

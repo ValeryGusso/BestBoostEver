@@ -5,12 +5,7 @@ import { setDirection as setDirectionState, setSort } from '../../redux/filterSl
 import { RootState } from '../../redux/store'
 import React from 'react'
 import cls from './Sort.module.css'
-
-const options = [
-	{ title: 'популярности', type: 'rating' },
-	{ title: 'цене', type: 'price' },
-	{ title: 'алфавиту', type: 'title' },
-]
+import { options } from '../../assets/params'
 
 const y = ['2vmin', '8vmin', '14vmin']
 const drc = ['asc', 'desc']
@@ -19,6 +14,7 @@ const Sort: React.FC = React.memo(() => {
 	const [isOpen, setIsOpen] = useState(false)
 	const sortRef = useRef<HTMLDivElement>(null)
 	const [direction, setDirection] = useState(false)
+	const [title, setTitle] = useState('')
 
 	const { type: sortType, title: sortTitle } = useSelector((state: RootState) => state.filter.sortType)
 	const dispatch = useDispatch()
@@ -41,23 +37,30 @@ const Sort: React.FC = React.memo(() => {
 		<div ref={sortRef} className={cls.sort}>
 			<div className={cls.label}>
 				<img
-					style={!direction ? {transform: 'rotateZ(180deg) scale(0.8)'} : {transform: 'scale(0.8)'}}
+					style={!direction ? { transform: 'rotateZ(180deg)' } : { transform: 'scale(1)' }}
 					onClick={() => {
 						setDirection(!direction)
-						const abc = {sortDirection : direction ? drc[1] : drc[0]}
-						dispatch(setDirectionState(abc))
+						dispatch(setDirectionState({ sortDirection: direction ? drc[1] : drc[0] }))
 					}}
 					src="https://www.svgrepo.com/show/154721/up-arrow.svg"
 					alt="arrow"
 				/>
-				<b>Сортировка по:</b>
-				<span
+				<b
+					className={cls.text}
 					onClick={() => {
 						setIsOpen(!isOpen)
 					}}
 				>
-					{sortTitle}
-				</span>
+					Sort by:
+				</b>
+				<b
+					className={cls.text}
+					onClick={() => {
+						setIsOpen(!isOpen)
+					}}
+				>
+					{title}
+				</b>
 			</div>
 			{isOpen && (
 				<div className={cls.menu}>
@@ -72,6 +75,7 @@ const Sort: React.FC = React.memo(() => {
 									onClick={() => {
 										dispatch(setSort(el))
 										setIsOpen(false)
+										setTitle(el.title)
 									}}
 								>
 									{el.title}

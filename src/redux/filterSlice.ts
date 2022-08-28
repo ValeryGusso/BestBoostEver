@@ -15,9 +15,9 @@ interface filterSliceState {
 }
 
 const initialState: filterSliceState = {
-	categoryID: 0,
+	categoryID: -1,
 	sortType: {
-		title: 'популярности',
+		title: 'rating',
 		type: 'rating',
 	},
 	sortDirection: 'asc',
@@ -44,7 +44,6 @@ export const filterSlice = createSlice({
 		},
 		setDirection(state, action: PayloadAction<{sortDirection: string}>) {
 			state.sortDirection = action.payload.sortDirection
-			console.log(123)
 		},
 	},
 })

@@ -46,13 +46,15 @@
 
 .info h3 {
 	font-weight: bold;
-	font-size: 3vmin;
+	font-size: 4vmin;
 	line-height: 3vmin;
 	letter-spacing: 0.01em;
+	color: wheat
 }
 
 .info p {
-	font-size: 2.5vmin;
+	font-size: 3vmin;
+	color: wheat
 }
 
 .count {
@@ -70,7 +72,8 @@
 }
 
 .count b {
-	font-size: 3vmin;
+	font-size: 5vmin;
+	color: wheat
 }
 
 .price {
@@ -89,8 +92,9 @@
 
 .price b {
 	font-weight: bold;
-	font-size: 3vmin;
+	font-size: 4vmin;
 	letter-spacing: 0.01em;
+	color: wheat
 }
 
 .button {
@@ -98,9 +102,14 @@
   height: 6vmin;
   border: none;
   border-radius: 50%;
-  background: orange;
+  background: linear-gradient(45deg, #fc4a1a, #f7b733);
   cursor: pointer;
   transition: 0.5s;
+}
+
+.button:hover {
+	transform: scale(1.1);
+	filter: drop-shadow(0.5vmin 0.5vmin black);
 }
 
 .inner {
@@ -112,7 +121,12 @@ transform: scale(0.4);
 }
 
 .button:disabled {
-  background: rgb(72, 72, 72)
+  background: linear-gradient(45deg, #1F1C2C, #928DAB)
+}
+
+.button:disabled:hover {
+	transform: none;
+	filter: none;
 }
 
 .remove {
@@ -127,6 +141,10 @@ transform: scale(0.4);
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+}
+
+.remove button {
+	background: linear-gradient(45deg, #EB3349, #F45C43);
 }
 
 .remove img {

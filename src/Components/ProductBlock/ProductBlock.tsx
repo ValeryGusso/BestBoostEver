@@ -1,26 +1,19 @@
 import { useDispatch } from 'react-redux'
 import { addItem } from '../../redux/cartSlice'
 import ProductOptions from './ProductOptions/ProductOptions'
-import { useContext } from 'react'
-import { Context } from '../../App'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import cls from './ProductBlock.module.css'
+import { mainOptions } from '../../assets/params'
+import { Item } from '../../redux/productSlice'
 
-type ProductBlockProps = {
-	id: number;
-	title: string;
-	category: number;
-	imageUrl: string;
-	rating: number;
-	price: number;
-	types: string[];
-	sizes: number []   
-}
-const ProductBlock: React.FC<ProductBlockProps> = (props) => {
+
+const ProductBlock: React.FC<Item> = props => {
 	// Возможно ещё пригодится, если понадобится счётчик добавленных товаров
 	// const count = useSelector((state: RootState) => state.cart.items.find(obj => obj.id === props.id))
 	const dispatch = useDispatch()
-	const context = useContext(Context)
+	const [currentPrice, setCurrentPrice] = useState(0)
+	const [currentType, setCurrentType] = useState(0)
 
 	function setItem() {
 		dispatch(
@@ -28,9 +21,9 @@ const ProductBlock: React.FC<ProductBlockProps> = (props) => {
 				id: props.id,
 				title: props.title,
 				image: props.imageUrl,
-				price: props.price,
-				size: context.activeSecond,
-				type: context.activeFirst,
+				price: props.prices[currentPrice],
+				options: props.options[currentPrice],
+				type: mainOptions[currentType],
 			})
 		)
 	}
@@ -38,15 +31,20 @@ const ProductBlock: React.FC<ProductBlockProps> = (props) => {
 	return (
 		<div className={cls.product}>
 			<Link to={`product/${props.id}`}>
-				<img src={props.imageUrl} alt="Pizza" />
+				<img src={props.imageUrl} alt="image" />
 				<h4 className={cls.title}>{props.title}</h4>
 			</Link>
-			<ProductOptions firstOption={props.types} secondOption={props.sizes} />
+			<div className={cls.options}>
+				<ProductOptions
+					firstOption={props.types}
+					secondOption={props.options}
+					setCurrentPrice={setCurrentPrice}
+					setCurrentType={setCurrentType}
+				/>
+			</div>
 			<div className={cls.bottom}>
-				<div className={cls.price}>{props.price} ₽</div>
-				<button onClick={() => setItem()}>
-					<span>Добавить</span>
-				</button>
+				<div className={cls.price}>{props.prices[currentPrice]} $</div>
+				<button onClick={() => setItem()}>Add to cart</button>
 			</div>
 		</div>
 	)

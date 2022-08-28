@@ -1,5 +1,5 @@
 .sort {
-  cursor: default
+  cursor: default;
 }
 
 .label {
@@ -9,13 +9,21 @@
   column-gap: 0.2vmax;
   align-items: center;
 	justify-items: center;
-  font-size: 2vmin;
+  font-size: 3vmin;
+}
+
+.text {
+  font-size: 4vmin;
+  color: aquamarine;
 }
 
 .label span{
 cursor: pointer;
 }
 
+.label b {
+  cursor: pointer;
+}
 .menu ul {
   display: grid;
 grid-template-rows: 1fr 1fr 1fr;
@@ -27,21 +35,29 @@ row-gap: 1vmin;
 .menu li {
   position: absolute;
   user-select: none;
-  width: 16vmax;
+  width: 10vmax;
   height: 5vmin;
   color: white;
   margin-bottom: 1vmin;
   text-align: center;
-  background: rgba(0, 0, 0, 0.45);
-  border-radius: 2.5vmin;
   cursor: pointer;
   font-size: 4vmin;
   transform: translateY(var(--y));
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.menu li:hover {
+  background: rgba(0, 0, 0, 0.65);
+  transform: translateY(var(--y)) scale(1.1);
+  border-radius: 2.5vmin;
+  letter-spacing: 0.2vmax;
 }
 
 .label img {
   transition: 0.5s;
   cursor: pointer;
+  filter: invert(0.9);
 }
 
 

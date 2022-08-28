@@ -1,35 +1,67 @@
 .header {
   /* position: fixed; */
-	height: 15vmin;
+	height: 17vmin;
 	display: grid;
-	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-columns: 2fr 2fr 1fr;
 	align-items: center;
 	justify-items: center;
 }
 
 .logo {
+	width: 100%;
+	height: 100%;
 	display: grid;
-	grid-template-rows: 2fr 1fr;
+	grid-template-columns: 2fr 1fr;
   text-align: center;
 }
 
 .title {
+	position: relative;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 3fr 1fr;
 	align-items: center;
 	justify-items: center;
+
+
+}
+
+.title h1 {
+	position: absolute;
+	left: -13vmax;
+	top: -2vmin;
+	width: 30vmax!important;
+	font-size: 9vmin;
+}
+
+.title p {
+	margin-top: 10vmin;
+	font-size: 3vmin;
+}
+
+.text {
+	color: orange
+}
+
+.logo img {
+	width: 17vmin;
+	filter: invert(1);
 }
 
 .cart {
   width: 15vmax;
   height: 8vmin;
-  background: aquamarine;
+  background: linear-gradient(45deg, #134E5E, #71B280);
   border-radius: 2vmin;
   display: grid;
-	grid-template-columns: 2fr 1.5fr 1fr;
+	grid-template-columns: 2fr 1.2fr 1fr;
   align-items: center;
 	justify-items: center;
   font-size: 3vmin;
+}
+
+.cart span {
+	color: wheat;
+	font-size: 4vmin
 }
 
 .cart img {
@@ -38,5 +70,5 @@
 }
 
 .cart:hover img {
-  transform: translateX(1.5vmax);
+  transform: translateX(1vmax);
 }

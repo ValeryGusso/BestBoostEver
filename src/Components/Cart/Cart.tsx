@@ -12,7 +12,7 @@ const Cart: React.FC = () => {
 	const showCartModal = useSelector(selectCartModal)
 	const showItemModal = useSelector(selectItemModal)
 
-	let key = 0 
+	let key = 0
 
 	function clear() {
 		dispatch(setCartModal())
@@ -26,12 +26,12 @@ const Cart: React.FC = () => {
 			<div className={cls.cart}>
 				<div className={cls.header}>
 					<div className={cls.title}>
+						Your cart:
 						<img src="https://www.svgrepo.com/show/95040/shopping-cart.svg" alt="cart" />
-						Корзина
 					</div>
 					<div className={cls.clear} onClick={clear}>
 						<img src="https://www.svgrepo.com/show/354700/waste-basket-14.svg" alt="clear" />
-						Очистить корзину
+						Clear cart
 					</div>
 				</div>
 				<div>
@@ -43,11 +43,11 @@ const Cart: React.FC = () => {
 					<div className={cls.info}>
 						<span>
 							{' '}
-							Всего пицц: <b>{totalCount} шт.</b>{' '}
+							Total count: <b>{totalCount} pcs.</b>{' '}
 						</span>
 						<span>
 							{' '}
-							Сумма заказа: <b>{totalPrice} ₽</b>{' '}
+							Totat price: <b>{totalPrice} $</b>{' '}
 						</span>
 					</div>
 					<div className={cls.buttons}>
@@ -57,7 +57,9 @@ const Cart: React.FC = () => {
 								Back
 							</button>
 						</Link>
-						<button className={cls.pay}>Pay now</button>
+						<Link to="payment">
+							<button className={cls.pay}>Pay now</button>
+						</Link>
 					</div>
 				</div>
 			</div>

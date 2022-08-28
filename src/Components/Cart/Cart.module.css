@@ -14,7 +14,25 @@
 .header img {
 	width: 5vmin;
 	height: 5vmin;
-	margin-right: 1vmin;
+	margin-left: 2vmin;
+	filter: invert(0.8);
+}
+
+.header div {
+	position: relative;
+	color: wheat;
+}
+
+.header div::before {
+	content: '';
+	position: absolute;
+	top: -5%;
+	left: -10%;
+	width: 120%;
+	height: 110%;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 1vmax;
+	z-index: -1;
 }
 
 .title {
@@ -40,6 +58,12 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	transition: 0.3s;
+}
+
+.clear:hover {
+	transform: scale(1.1);
+	letter-spacing: 0.1vmax;
 }
 
 .footer {
@@ -55,8 +79,10 @@
 	justify-content: space-between;
 }
 
-.info span {
-	font-size: 22px;
+.info span,
+b {
+	font-size: 3vmin;
+	color: wheat;
 }
 
 .buttons {
@@ -72,21 +98,39 @@
 .back {
 	position: relative;
 	padding-left: 4vmin;
+	background: linear-gradient(45deg, #2C3E50, #FD746C)
+}
+
+.pay {
+	background: linear-gradient(45deg, #00467F, #A5CC82)
 }
 
 .back img {
 	position: absolute;
-	top: 0.5vmin;
+	top: 1.75vmin;
 	left: 2vmin;
 	width: 4vmin;
 	height: 4vmin;
+	transform: scale(1.5);
 }
 
 .buttons button {
-	width: 15vmin;
-	height: 5vmin;
+	width: 10vmax;
+	height: 8vmin;
 	border: none;
 	border-radius: 2vmin;
-	font-size: 2vmin;
+	font-size: 4vmin;
 	cursor: pointer;
+	color: wheat;
+	transition: 0.5s;
+	filter: drop-shadow(0.5vmin 0.5vmin 0 black);
+}
+
+.buttons button:hover {
+	transform: scale(1.1);
+}
+
+.buttons button:active {
+	transform: scale(1);
+	transition: 0.1s;
 }

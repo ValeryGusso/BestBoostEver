@@ -20,16 +20,17 @@
 	align-items: center;
 	justify-content: center;
 	font-size: 2.5vmin;
-	background: grey;
+	background: linear-gradient(45deg, #4568DC,#B06AB3);
 	border-radius: 2vmin;
 	transition: 0.5s;
   cursor: pointer;
+	color: wheat
 }
 
 .active {
 	transform: scale(1.1) translateY(1vmin);
 	color: antiquewhite!important;
-	background: black!important;
+	background: linear-gradient(45deg, #16222A,#3A6073)!important;
 }
 
 .categories ul li:hover {

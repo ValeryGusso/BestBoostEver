@@ -1,10 +1,8 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux/es/exports"
+import { categories } from "../../assets/params"
 import { selectCategoryID, setCategory } from "../../redux/filterSlice"
 import cls from './Categories.module.css'
-
-
-const categories: string[] = ['All', 'Dungeons', 'Raids', 'PvP', 'Powerleleling', 'Other']
 
 const Categories: React.FC = React.memo(() => {
 
@@ -19,7 +17,7 @@ const Categories: React.FC = React.memo(() => {
 						<li 
             key={i} 
             className={category === i ? (cls.active) : ''} 
-            onClick={() => dispatch(setCategory(+i))}>
+            onClick={() => dispatch(setCategory(i))}>
 							{el}
 						</li>
 					)

@@ -1,55 +1,93 @@
 .product {
-  width: 25vmax;
-  height: 25vmax;
-  margin-bottom: 2vmax;
-  margin-right: 2vmax;
-  /* background: rgba(255, 0, 0, 0.1); */
-  display: grid;
-  grid-template-rows: 17vmax 0.8fr 0.5fr;
-  /* align-items: center; */
+	position: relative;
+	width: 25vmax;
+	height: 25vmax;
+	margin-bottom: 2vmax;
+	margin-right: 2vmax;
+	display: grid;
+	grid-template-rows: 17vmax 0.8fr 0.5fr;
+	align-items: center;
+	justify-items: center;
 }
 
 .product img {
-  width: 17vmax;
-  margin: -1vmax 4vmax;
-  /* height: 50%; */
+	position: absolute;
+	top: 0;
+	left: 5.5vmax;
+	width: 14vmax;
 }
 
 .title {
-  text-align: center;
-  font-size: 3vmin;
-  /* margin-top: 1vmax; */
+	position: absolute;
+	top: 14vmin;
+
+	position: relative;
+	text-align: center;
+	font-size: 3vmin;
+	color: wheat;
 }
 
+.title::before {
+	content: '';
+	position: absolute;
+	top: -0.25vmin;
+	left: -10%;
+	width: 120%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+  border-radius: 1vmax;
+  z-index: -1;
+}
+
+.options {
+	width: 75%;
+	height: 100%;
+}
 .bottom {
-display: flex;
-flex-direction: row;
-text-align: center;
-justify-content: center;
-align-items:center;
-column-gap: 2vmax;
-font-size: 3vmin;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	column-gap: 2vmax;
+	font-size: 3vmin;
 }
 
 .price {
-  color: whitesmoke
+	position: relative;
+	color: whitesmoke;
+	font-size: 6vmin;
 }
+
+.price::before {
+	content: '';
+	position: absolute;
+	top: 5%;
+	left: -10%;
+	width: 120%;
+	height: 80%;
+	background: rgba(0, 0, 0, 0.6);
+  border-radius: 1vmax;
+  z-index: -1;
+}
+
 .bottom button {
-  width: 8vmax;
-  height: 5vmin;
-  background: olivedrab;
-  border-radius: 1vmin;
-  border: none;
-  font-size: 3vmin;
-  cursor: pointer;
-  transition: 0.3s;
+	width: 10vmax;
+	height: 7vmin;
+	background: linear-gradient(45deg, #134e5e, #71b280);
+	color: wheat;
+	border-radius: 1vmin;
+	border: none;
+	font-size: 3.5vmin;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
 .bottom button:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(1vmin 1vmin 1vmin black);
+	transform: scale(1.05);
+	filter: drop-shadow(1vmin 1vmin 1vmin black);
 }
 
 .bottom button:active {
-  transform: scale(1);
+	transform: scale(1);
 }

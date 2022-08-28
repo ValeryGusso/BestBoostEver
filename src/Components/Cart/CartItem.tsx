@@ -7,22 +7,22 @@ type CartItemProps = {
 	title: string
 	price: number
 	image: string
-	size: number
-	type: number
+	options: string
+	type: string
 	counter?: number
 	index?: number
 }
 
-const CartItem: React.FC<CartItemProps> = ({ id, title, price, image, size, type, counter, index }) => {
+const CartItem: React.FC<CartItemProps> = ({ id, title, price, image, options, type, counter, index }) => {
 	const dispatch = useDispatch()
 
 	function inc() {
-		dispatch(increment({ id, size, type } as CartItemProps))
+		dispatch(increment({ id, options, type } as CartItemProps))
 	}
 
 	function dec() {
 		if (counter && counter > 1) {
-			dispatch(decrement({ id, size, type } as CartItemProps))
+			dispatch(decrement({ id, options, type } as CartItemProps))
 		}
 	}
 
@@ -38,7 +38,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, price, image, size, type
 			<div className={cls.info}>
 				<h3>{title}</h3>
 				<p>
-					{type}, {size} см.
+					{type}, {options}
 				</p>
 			</div>
 			<div className={cls.count}>
@@ -51,7 +51,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, price, image, size, type
 				</button>
 			</div>
 			<div className={cls.price}>
-				<b>{price * (counter || 0)} ₽</b>
+				<b>{price * (counter || 0)} $</b>
 			</div>
 			<div className={cls.remove}>
 				<button className={cls.button} onClick={() => remove()}>

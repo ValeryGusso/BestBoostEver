@@ -2,15 +2,15 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { RootState } from './store'
 
-type Item = {
+export type Item = {
 	id: number;
 	title: string;
 	category: number;
 	imageUrl: string;
 	rating: number;
-	price: number;
-	types: string[];
-	sizes: number[] 
+	prices: number[];
+	types: number[];
+	options: string[] 
 }
 
 interface ProductSliceState {
@@ -23,23 +23,11 @@ const initialState: ProductSliceState = {
 	isLoad: true,
 }
 
-// export const fetchProduct = createAsyncThunk('product/fetchProductStatus', async (props:{categoryID: number, sortType: string, sortDirection: string}) => {
-//   const {categoryID, sortType, sortDirection} = props
-// 	const { data } = await axios.get(
-// 		`https://62e92164249bb1284ebb1ada.mockapi.io/ProductData?sortBy=${sortType}&order=${sortDirection}${
-// 			categoryID ? '&category=' + categoryID : ''
-// 		}`
-// 	)
-// 	return data as Item[]
-// })
-
-export const fetchProduct = createAsyncThunk('product/fetchProductStatus', async (props:{categoryID: number, sortType: string, sortDirection: string}) => {
-  const {categoryID, sortType, sortDirection} = props
+export const fetchProduct = createAsyncThunk('product/fetchProductStatus', async (props:{categoryID: number}) => {
+  const {categoryID} = props
 	const { data } = await axios.get(
-		`https://62e92164249bb1284ebb1ada.mockapi.io/Products?sortBy=${categoryID === 0 ? '&category=' + (categoryID - 1): ''}`
-		// `https://62e92164249bb1284ebb1ada.mockapi.io/ProductData?sortBy=${sortType}&order=${sortDirection}${
-		// 	categoryID ? '&category=' + categoryID : ''
-		// }`
+		`https://62e92164249bb1284ebb1ada.mockapi.io/Products`
+		// ${categoryID !== 0 ? '?category=' + (categoryID - 1) : ''}
 	)
 	return data as Item[]
 })
